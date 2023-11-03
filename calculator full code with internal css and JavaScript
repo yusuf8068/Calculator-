@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Calculator</title>
+<style> 
+
+
+* {padding:0;
+  margin:0;}
+.calculator { 
+  border-radius: 10px;
+  margin: 70px;
+  background-color: navy; 
+  height:350px; 
+  width: 244px; }
+  
+button{
+  font-weight: bold; 
+  margin:4px; 
+  padding: 5px;
+  border-radius: 35%;
+  padding:5px, 5px, 2px, 2px;
+  height: 37px;
+  width: 37px; 
+  color:white; 
+  background-color: black;}
+
+textarea {
+  margin-bottom: 0;
+  border-radius: 0px; 
+  background-color: skyblue; 
+  font-weight: bold;  
+  text-align: end; 
+  font-size: 30px;  
+  color:black;
+  margin: 17.5px; 
+  height: 70px; 
+  width:207px;}
+
+.zerobtn {
+  border-radius: 14px; 
+  width:84px;}
+
+.equalbtn { 
+  background-color: orange}
+
+.key {
+background-color: blue;
+      }
+
+.acbtn {
+  background-color: red}
+
+.delbtn {
+  background-color: white;
+  color:black;}
+
+.yhri {
+  height:30px; 
+  border-radius:20px;
+  box-sizing: border-box; 
+  margin-left:0; 
+  margin-top:20px; 
+  color: skyblue; 
+  background-color: black; 
+  width:244px;}
+
+.yhri:hover {
+  border: 2px solid black; 
+  color: black;
+  transition:0.5s;
+  background-color: skyblue;}
+
+.sp {
+  background-color: navy;}
+
+.spp {font-size: 16px; 
+color: black;
+background-color: white;}
+body {background-color:#1d7988}
+
+
+</style>
+</head>
+<body>
+   
+  <div class="calculator">
+    <textarea class="text"  id="input"></textarea>
+    <button onclick="clrs()"  class="acbtn">AC</button>
+    <button onclick="del('')" class="delbtn">DEL</button>
+    <button onclick="display('%')"class="spp" >%</button>
+    <button onclick="display('3.14')"class="spp" >π</button>
+    <button onclick="display('/')"  class="key">&#247</button>
+    <button onclick="square()"class="sp" >x<sup><small>2</small></sup></button>
+    <button onclick="display('7')"   >7</button>
+    <button onclick="display('8')"  >8</button>
+    <button onclick="display('9')"  >9</button>
+    <button onclick="display('*')"   class="key">&#215</button>
+    <button onclick="cube()"class="sp" >x<sup><small>3</small></sup></button>
+    <button onclick="display('4')"  >4</button>
+    <button onclick="display('5')"   >5</button>
+    <button onclick="display('6')"   >6</button>
+    <button onclick="display('+')"  class="key">+</button> 
+    <button onclick="root()"class="sp" >√<sub> <small>x</small></sub></button>
+    <button onclick="display('1')"   >1</button>
+    <button onclick="display('2')"  >2</button>
+    <button onclick="display('3')"  >3</button>
+    <button onclick="display('-')"   class="key">-</button>
+    <button onclick="display('0')"  class="zerobtn">0</button>
+    <button onclick="display('00')"  >00</button>
+    <button onclick="display('.')"   >.</button>
+    <button onclick="calculate()" class="equalbtn">=</button> 
+    <button onclick="yhri()" class="yhri" > Click here to know the creator's name</button>
+ </div>
+  <script>
+
+
+      
+  let result = document.getElementById("input");
+  function yhri() { alert("Md. Yusuf")}
+  function display(number) {result.value += (number)}
+  function calculate() {result.value = eval(result.value);}
+  function del() {result.value = result.value.slice(0,-1);}
+  function clrs() {result.value = "";}
+  function square() { result.value = result.value * result.value}
+  function cube() { result.value = result.value * result.value * result.value}
+  
+
+
+</script>
+</body>
+</html>
+  
